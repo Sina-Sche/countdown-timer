@@ -1,18 +1,21 @@
-import _ from "lodash";
 import "./style.css";
-import printMe from "./print.js";
+import { createButtonElement } from "./button";
+import { createInputElement } from "./inputfield";
 
 function component() {
   const element = document.createElement("div");
-  const btn = document.createElement("button");
+  element.innerHTML = "Countdown Timer";
+  element.classList.add("countdown-container");
 
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  element.classList.add("hello");
+  // const btn = document.createElement("button");
+  // btn.innerHTML = "Click!";
+  // btn.classList.add("action_btn");
 
-  btn.innerHTML = "Click me and check the console!";
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
+  // const input = document.createElement("input");
+  // input.text = "HelloWorld";
+  // input.classList.add("time-input");
+  element.appendChild(createInputElement),
+    element.appendChild(createButtonElement);
 
   return element;
 }
